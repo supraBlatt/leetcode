@@ -1,7 +1,4 @@
-
-
 from typing import List
-
 
 class Solution:
     
@@ -50,3 +47,4 @@ class Solution:
             else: 
                 bizz.append(str(i))
         return bizz
+
