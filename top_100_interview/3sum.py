@@ -8,11 +8,16 @@ class Solution:
     # - one version of 2-sum is with sorting, and the other is with a hashtable
     # another one I'm aware of uses decision trees but idk how to implement that
 
-    # helper function!! returns all couples that sum to target
+    # helper function!! returns the doubles that sum to target, with no redundencies
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        result = []
         seen = {}
 
+        for n in nums:
+            if (target-n) in seen:
+
+
+        for i in range(len(nums)-1):
+                    
 
 
         return result
@@ -20,9 +25,13 @@ class Solution:
     # big fanni name!!!!
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         result = []
+        # no need to check the last 2 
         for i in range(len(nums)-2):
             # to prevent repetitions we'll only use elements following it..
-            two_sum = self.twoSum(self, nums[i+1:], -nums[i])
-            result += map(lambda x: x + nums[i], two_sum)
+            # there's still the issue of order. so - 1,2,3 and 1,3,2 would be the same
+            # but counted as different sequences
+            target = nums[i]
+            two_sum = self.twoSum(self, nums[i+1:], -target)
+            result += map(lambda x: x + target, two_sum)
 
         return result
